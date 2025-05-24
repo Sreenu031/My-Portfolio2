@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -57,11 +56,17 @@ export function Navbar() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full border-b transition-colors duration-300",
-        isScrolled ? "border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" : "border-transparent bg-transparent"
+        isScrolled
+          ? "border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+          : "border-transparent bg-transparent"
       )}
     >
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
-        <Link href="/#about" className="flex items-center space-x-2" onClick={() => setActiveLink("/#about")}>
+        <Link
+          href="/#about"
+          className="flex items-center space-x-2"
+          onClick={() => setActiveLink("/#about")}
+        >
           <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
             Syam Gowtham Geddam
           </span>
@@ -134,9 +139,13 @@ export function Navbar() {
               side="right"
               className="w-[300px] sm:w-[400px] bg-background p-6 flex flex-col"
             >
-              <Link href="/#about" className="flex items-center space-x-2 mb-6" onClick={() => setActiveLink("/#about")}>
+              <Link
+                href="/#about"
+                className="flex items-center space-x-2 mb-6"
+                onClick={() => setActiveLink("/#about")}
+              >
                 <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-                  Syam G. Geddam
+                  Syam Gowtham Geddam
                 </span>
               </Link>
               <nav className="flex flex-col space-y-3 mb-auto">

@@ -28,6 +28,7 @@ import {
   ExternalLink,
   Briefcase,
   Github,
+  BrainCircuitIcon,
 } from "lucide-react";
 import { RESUME_PATH } from "@/lib/constants";
 import { PageTitle } from "@/components/page-title";
@@ -95,45 +96,37 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 // Data Arrays
 const projectsData: Project[] = [
   {
-    title: "AI Powered E-commerce Platform",
+    title: "Chatbot Application using Gemini API",
     description:
-      "A smart e-commerce solution leveraging machine learning for personalized recommendations and inventory management. Built with a modern tech stack for scalability and performance.",
-    technologies: [
-      "Next.js",
-      "Python (Flask/Django)",
-      "PostgreSQL",
-      "Docker",
-      "AWS",
-      "TensorFlow",
-    ],
-    imageUrl: "https://placehold.co/600x400.png",
+      "A sophisticated chatbot application leveraging the Gemini API to provide intelligent responses and engage users in natural language conversations. Features include context awareness, image recognition, and multi-turn dialogue management.",
+    technologies: ["React", "Node.js", "MongoDB", "Docker", "Gemini API"],
+    imageUrl: "/images/chatbot.png",
     imageHint: "ecommerce platform",
-    projectUrl: "#",
-    repoUrl: "#",
+    repoUrl: "https://github.com/nameishyam/chat-bot",
   },
   {
-    title: "Data Visualization Dashboard",
+    title: "Diabetic Retinopathy Detection System",
     description:
-      "An interactive dashboard for visualizing complex datasets, enabling users to uncover insights through dynamic charts and filters. Focused on user-friendly design and real-time data processing.",
-    technologies: ["React", "D3.js", "Node.js", "MongoDB", "GraphQL"],
-    imageUrl: "https://placehold.co/600x400.png",
+      "A deep learning based system for detecting diabetic retinopathy in retinal images. Utilizes advanced image processing techniques and neural networks for accurate diagnosis.",
+    technologies: ["GAN", "Pytorch", "OpenCV", "DRNet", "Flask", "Docker"],
+    imageUrl: "/images/drgrader.png",
     imageHint: "data dashboard",
-    projectUrl: "#",
-    repoUrl: "#",
+    repoUrl: "https://github.com/nameishyam/mini-webapp",
   },
   {
-    title: "Mobile Health Companion App",
+    title: "To-Do List Application",
     description:
-      "A cross-platform mobile application designed to help users track their fitness goals, monitor health metrics, and receive personalized wellness tips. Includes gamification and social features.",
+      "A simple yet effective to-do list application built with EJS and Node.js. Allows users to create, update, and delete tasks.",
     technologies: [
-      "React Native",
-      "Firebase",
+      "EJS",
+      "PostgreSQL",
       "Node.js",
       "Express.js",
-      "Apple HealthKit / Google Fit API",
+      "Tailwind CSS",
     ],
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "/images/todo.png",
     imageHint: "mobile health",
+    repoUrl: "https://github.com/nameishyam/todo-app",
   },
 ];
 
@@ -147,19 +140,19 @@ const skillsData = [
   {
     name: "TypeScript",
     icon: Code,
-    level: "Advanced" as const,
+    level: "Intermediate" as const,
     description: "Strong Typing, Interfaces, Generics",
   },
   {
-    name: "React & Next.js",
+    name: "React",
     icon: LayoutPanelLeft,
-    level: "Advanced" as const,
+    level: "Intermediate" as const,
     description: "Component Architecture, Hooks, SSR, SSG",
   },
   {
     name: "Node.js & Express",
     icon: Code,
-    level: "Intermediate" as const,
+    level: "Expert" as const,
     description: "REST APIs, Middleware, Backend Logic",
   },
   {
@@ -175,6 +168,12 @@ const skillsData = [
     description: "Scikit-learn, TensorFlow, PyTorch Basics",
   },
   {
+    name: "Deep Learning and NLP",
+    icon: BrainCircuitIcon,
+    level: "Intermediate" as const,
+    description: "Transformers, BERT, GPT, Text Generation",
+  },
+  {
     name: "Data Science",
     icon: BarChart3,
     level: "Intermediate" as const,
@@ -185,12 +184,6 @@ const skillsData = [
     icon: Database,
     level: "Intermediate" as const,
     description: "PostgreSQL, MongoDB, Database Design",
-  },
-  {
-    name: "UI/UX Design",
-    icon: LayoutPanelLeft,
-    level: "Intermediate" as const,
-    description: "Figma, Adobe XD, User-Centered Design",
   },
   {
     name: "HTML & CSS",
@@ -214,22 +207,13 @@ const skillsData = [
 
 const educationData: EducationEntry[] = [
   {
-    degree: "Master of Science in Computer Science",
-    institution: "University of Tech Excellence (UTE)",
-    duration: "2023 - Present",
+    degree: "Bachelor of Technology in Computer Science",
+    institution: "University of SAHE",
+    duration: "2022 - Present",
     description:
-      "Specializing in Artificial Intelligence and Software Engineering. Actively involved in research projects focusing on natural language processing and computer vision.",
-    logoUrl: "https://placehold.co/100x100.png",
+      "Specializing in Artificial Intelligence and Machine Learning. Actively involved in research projects focusing on medical research and computer vision. Participated in various hackathons and coding competitions, gaining valuable experience. Led the university's Google Developer Student Club (GDSC) chapter's web development initiatives, organizing workshops and events to foster a community of tech enthusiasts.",
+    logoUrl: "/images/sahe.png",
     logoHint: "university logo",
-  },
-  {
-    degree: "Bachelor of Technology in Information Technology",
-    institution: "Institute of Foundational Learning (IFL)",
-    duration: "2019 - 2023",
-    description:
-      "Graduated with honors, focusing on web development, database management, and algorithms. Led the university coding club and participated in several hackathons.",
-    logoUrl: "https://placehold.co/100x100.png",
-    logoHint: "institute logo",
   },
 ];
 
