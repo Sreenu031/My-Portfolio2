@@ -1,8 +1,12 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   :root {
     /* Light Theme based on user's custom scheme */
     --background: 210 60% 98%; /* #F7FAFC Soft white */
@@ -86,24 +90,4 @@
   .card:hover {
     @apply scale-102 shadow-xl;
   }
-}
-
-/* Refined page transitions for multi-page portfolio */
-.page-transition-enter {
-  opacity: 0;
-  transform: translateY(10px);
-}
-.page-transition-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 400ms ease, transform 400ms ease;
-}
-.page-transition-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-.page-transition-exit-active {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 400ms ease, transform 400ms ease;
 }

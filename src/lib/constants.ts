@@ -1,30 +1,33 @@
+
 import type { LucideIcon } from "lucide-react";
 import {
   Github,
   Linkedin,
   Home,
-  User,
+  UserCircle2, // Changed from User to UserCircle2 for "About" if preferred
   Briefcase,
   Lightbulb,
   GraduationCap,
   Award,
   Mail,
+  User, // For Experience
 } from "lucide-react";
 
 export interface NavLink {
   href: string;
   label: string;
   icon: LucideIcon;
+  id: string; // Added id for section targeting
 }
 
 export const navLinks: NavLink[] = [
-  { href: "/", label: "About", icon: Home },
-  { href: "/projects", label: "Projects", icon: Briefcase },
-  { href: "/skills", label: "Skills", icon: Lightbulb },
-  { href: "/education", label: "Education", icon: GraduationCap },
-  { href: "/certifications", label: "Certifications", icon: Award },
-  { href: "/experience", label: "Experience", icon: User },
-  { href: "/contact", label: "Contact", icon: Mail },
+  { href: "/#about", label: "About", icon: Home, id: "about" }, // Or UserCircle2
+  { href: "/#projects", label: "Projects", icon: Briefcase, id: "projects" },
+  { href: "/#skills", label: "Skills", icon: Lightbulb, id: "skills" },
+  { href: "/#education", label: "Education", icon: GraduationCap, id: "education" },
+  { href: "/#certifications", label: "Certifications", icon: Award, id: "certifications" },
+  { href: "/#experience", label: "Experience", icon: User, id: "experience" },
+  { href: "/#contact", label: "Contact", icon: Mail, id: "contact" },
 ];
 
 export interface SocialLink {
