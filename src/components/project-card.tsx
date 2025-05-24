@@ -27,8 +27,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <Image
             src={project.imageUrl}
             alt={project.title}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
             data-ai-hint={project.imageHint || "technology project"}
             className="transform group-hover:scale-105 transition-transform duration-500"
           />
