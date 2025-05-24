@@ -22,8 +22,16 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
       <CardHeader className="bg-muted/30 p-6">
         <div className="flex flex-col sm:flex-row items-start gap-4">
           {experience.logoUrl && (
-            <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden border-2 border-primary/20 bg-background flex items-center justify-center">
-              <Image src={experience.logoUrl} alt={`${experience.company} logo`} width={experience.logoUrl.includes('placehold.co') ? 64: 48} height={experience.logoUrl.includes('placehold.co') ? 64: 48} objectFit="contain" data-ai-hint={experience.logoHint} />
+            <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden border-2 border-primary/20 bg-background flex items-center justify-center relative">
+              <Image 
+                src={experience.logoUrl} 
+                alt={`${experience.company} logo`} 
+                fill={experience.logoUrl.includes('placehold.co')} // Use fill for placeholders if they are meant to cover the div
+                width={!experience.logoUrl.includes('placehold.co') ? 48 : undefined} // Conditional width/height
+                height={!experience.logoUrl.includes('placehold.co') ? 48 : undefined}
+                style={{ objectFit: "contain" }} 
+                data-ai-hint={experience.logoHint} 
+              />
             </div>
           )}
           {!experience.logoUrl && (

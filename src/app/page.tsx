@@ -13,8 +13,8 @@ export default function AboutPage() {
           <Image
             src="https://placehold.co/300x300.png"
             alt="Syam Gowtham Geddam"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
             priority
             data-ai-hint="profile picture"
             className="transform hover:scale-105 transition-transform duration-300"
