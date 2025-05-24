@@ -219,21 +219,18 @@ const educationData: EducationEntry[] = [
 
 const certificationsData: Certification[] = [
   {
-    name: "AWS Certified Solutions Architect - Associate",
-    issuingOrganization: "Amazon Web Services (AWS)",
-    dateAchieved: "March 2024",
-    credentialId: "AWS-CSA-12345",
-    credentialUrl: "#",
-    logoUrl: "https://placehold.co/50x50.png",
-    logoHint: "aws logo",
+    name: "Github Foundations Certification",
+    issuingOrganization: "GitHub",
+    dateAchieved: "May 2025",
+    credentialUrl:
+      "https://www.credly.com/badges/6a4b6bd7-8f98-4337-904c-b4e38306fc77/public_url",
   },
   {
-    name: "Google Cloud Certified - Professional Data Engineer",
+    name: "Google Cloud Engieneer - Cloud Computing Foundations",
     issuingOrganization: "Google Cloud",
-    dateAchieved: "July 2023",
-    credentialUrl: "#",
-    logoUrl: "https://placehold.co/50x50.png",
-    logoHint: "google cloud logo",
+    dateAchieved: "May 2025",
+    credentialUrl:
+      "https://www.credly.com/badges/731241e3-2e69-4ec5-b7fd-d785789d91fa/linked_in_profile",
   },
   {
     name: "Certified Kubernetes Administrator (CKA)",
