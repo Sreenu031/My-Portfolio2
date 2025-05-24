@@ -4,58 +4,64 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;      /* #F5F9FF Soft white-blue */
-    --foreground: 220 30% 10%;      /* #1C2526 Deep charcoal */
-    --card: 210 30% 94%;           /* #E6ECF5 Light blue-gray */
-    --card-foreground: 220 30% 10%; /* #1C2526 Deep charcoal */
-    --popover: 210 40% 98%;        /* #F5F9FF Soft white-blue */
-    --popover-foreground: 220 30% 10%; /* #1C2526 Deep charcoal */
-    --primary: 180 70% 40%;         /* #00A3AD Teal (slightly darker for balance) */
-    --primary-foreground: 0 0% 100%; /* #FFFFFF White */
-    --secondary: 210 20% 90%;       /* #DDE4EE Light gray-blue */
-    --secondary-foreground: 220 30% 10%; /* #1C2526 Deep charcoal */
-    --muted: 210 20% 90%;           /* #DDE4EE Light gray-blue */
-    --muted-foreground: 220 15% 40%; /* #5C6B73 Mid-gray */
-    --accent: 180 70% 40%;          /* #00A3AD Teal (consistent with primary) */
-    --accent-foreground: 0 0% 100%;  /* #FFFFFF White */
-    --destructive: 0 65% 50%;       /* #E63946 Soft red */
-    --destructive-foreground: 0 0% 100%; /* #FFFFFF White */
-    --border: 210 25% 80%;          /* #C4CED9 Light slate */
-    --input: 210 25% 80%;           /* #C4CED9 Light slate */
-    --ring: 180 70% 40%;            /* #00A3AD Teal */
-    --radius: 0.75rem;              /* Increased for smoother rounded corners */
-    --chart-1: 180 70% 40%;         /* #00A3AD Teal */
-    --chart-2: 260 60% 50%;         /* #7B68EE Soft purple */
-    --chart-3: 220 30% 50%;         /* #6B7280 Mid-gray */
-    --chart-4: 160 60% 45%;         /* #4AC8B8 Light teal */
-    --chart-5: 280 65% 60%;         /* #9575DE Light purple */
+    /* Light Theme based on user's custom scheme */
+    --background: 210 60% 98%; /* #F7FAFC Soft white */
+    --foreground: 220 27% 14%; /* #1A202C Dark gray */
+    --card: 216 28% 95%;      /* #EDF2F7 Light gray-blue */
+    --card-foreground: 220 27% 14%;
+    --popover: 210 60% 98%;
+    --popover-foreground: 220 27% 14%;
+    --primary: 0 76% 57%;     /* #E53E3E Soft red (User's Accent Color 2 for Light) */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 215 28% 91%;  /* #E2E8F0 Light gray (User's Hover for Light) */
+    --secondary-foreground: 220 27% 14%;
+    --muted: 215 28% 91%;
+    --muted-foreground: 218 15% 35%; /* #4A5568 Mid-gray (User's Secondary Text for Light) */
+    --accent: 0 76% 57%;     /* #E53E3E Soft red (Changed from Neon Teal to match primary) */
+    --accent-foreground: 0 0% 100%;  /* White */
+    --destructive: 0 65% 50%;       /* #E63946 Soft red (Default) */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 212 26% 83%;    /* #CBD5E0 Light slate (User's Border for Light) */
+    --input: 212 26% 83%;
+    --ring: 0 76% 57%;            /* Soft red */
+    --radius: 0.75rem;
+
+    /* Updated Chart Colors for Light Theme (No Green) */
+    --chart-1: 0 76% 57%;         /* Soft Red (matches new primary/accent) */
+    --chart-2: 260 60% 50%;       /* Purple (kept) */
+    --chart-3: 218 15% 35%;       /* Mid-gray (from user's secondary text) */
+    --chart-4: 0 76% 70%;         /* Lighter Soft Red */
+    --chart-5: 280 65% 60%;       /* Light purple (kept) */
   }
 
   .dark {
-    --background: 230 30% 12%;      /* #161A2B Deep blue */
-    --foreground: 0 0% 90%;         /* #E6E6E6 Off-white */
-    --card: 230 35% 15%;           /* #1B2139 Darker blue */
-    --card-foreground: 0 0% 90%;    /* #E6E6E6 Off-white */
-    --popover: 230 30% 12%;        /* #161A2B Deep blue */
-    --popover-foreground: 0 0% 90%; /* #E6E6E6 Off-white */
-    --primary: 340 80% 55%;         /* #F72585 Neon pink */
-    --primary-foreground: 0 0% 100%; /* #FFFFFF White */
-    --secondary: 230 20% 20%;       /* #2A3147 Mid blue-gray */
-    --secondary-foreground: 0 0% 90%; /* #E6E6E6 Off-white */
-    --muted: 230 20% 20%;           /* #2A3147 Mid blue-gray */
-    --muted-foreground: 220 15% 60%; /* #99A3B0 Light gray */
-    --accent: 180 70% 40%;          /* #00A3AD Teal (consistent with light theme) */
-    --accent-foreground: 0 0% 100%;  /* #FFFFFF White */
-    --destructive: 0 60% 40%;       /* #CC3333 Darker red */
-    --destructive-foreground: 0 0% 100%; /* #FFFFFF White */
-    --border: 220 15% 30%;          /* #4B5563 Slate gray */
-    --input: 220 15% 30%;           /* #4B5563 Slate gray */
-    --ring: 180 70% 40%;            /* #00A3AD Teal */
-    --chart-1: 180 70% 40%;         /* #00A3AD Teal */
-    --chart-2: 260 60% 50%;         /* #7B68EE Soft purple */
-    --chart-3: 220 20% 30%;         /* #4B5563 Dark gray */
-    --chart-4: 160 60% 45%;         /* #4AC8B8 Light teal */
-    --chart-5: 280 65% 60%;         /* #9575DE Light purple */
+    /* Dark Theme based on user's custom scheme */
+    --background: 232 30% 14%; /* #1A1A2E Deep navy blue */
+    --foreground: 0 0% 88%;   /* #E0E0E0 Soft off-white */
+    --card: 223 45% 16%;      /* #16213E Darker blue-gray */
+    --card-foreground: 0 0% 88%;
+    --popover: 232 30% 14%;
+    --popover-foreground: 0 0% 88%;
+    --primary: 345 100% 56%;  /* #FF2E63 Neon pink (User's Accent Color 2 for Dark) */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 217 9% 25%;  /* #393E46 Mid-tone gray (User's Hover for Dark) */
+    --secondary-foreground: 0 0% 88%;
+    --muted: 217 9% 25%;
+    --muted-foreground: 210 17% 69%; /* #A0AEC0 Light gray (User's Secondary Text for Dark) */
+    --accent: 345 100% 56%;   /* #FF2E63 Neon pink (Changed from Neon Teal to match primary) */
+    --accent-foreground: 0 0% 100%;  /* White */
+    --destructive: 0 60% 40%;       /* #CC3333 Darker red (Default) */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 218 15% 35%;    /* #4A5568 Slate gray (User's Border for Dark) */
+    --input: 218 15% 35%;
+    --ring: 345 100% 56%;            /* Neon pink */
+
+    /* Updated Chart Colors for Dark Theme (No Green) */
+    --chart-1: 345 100% 56%;     /* Neon Pink (matches new primary/accent) */
+    --chart-2: 260 60% 50%;       /* Purple (kept) */
+    --chart-3: 218 15% 35%;       /* Slate gray (from user's border) */
+    --chart-4: 345 100% 70%;     /* Lighter Neon Pink */
+    --chart-5: 280 65% 60%;       /* Light purple (kept) */
   }
 }
 
