@@ -4,58 +4,58 @@
 
 @layer base {
   :root {
-    --background: 210 60% 98%;      /* #F7FAFC Soft white */
-    --foreground: 218 28% 14%;      /* #1A202C Dark gray */
-    --card: 212 33% 95%;          /* #EDF2F7 Light gray-blue */
-    --card-foreground: 218 28% 14%; /* #1A202C Dark gray */
-    --popover: 210 60% 98%;       /* #F7FAFC Soft white */
-    --popover-foreground: 218 28% 14%; /* #1A202C Dark gray */
-    --primary: 0 72% 57%;           /* #E53E3E Soft red */
-    --primary-foreground: 0 0% 100%;  /* White */
-    --secondary: 215 28% 91%;       /* #E2E8F0 Light gray */
-    --secondary-foreground: 218 28% 14%; /* #1A202C Dark gray */
-    --muted: 215 28% 91%;           /* #E2E8F0 Light gray */
-    --muted-foreground: 218 17% 35%;  /* #4A5568 Mid-gray */
-    --accent: 183 100% 36%;         /* #00ADB5 Neon teal */
-    --accent-foreground: 218 28% 14%; /* #1A202C Dark gray */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 212 27% 80%;          /* #CBD5E0 Light slate */
-    --input: 212 27% 80%;           /* #CBD5E0 Light slate */
-    --ring: 0 72% 57%;              /* #E53E3E Soft red (primary for light theme ring) */
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --background: 210 40% 98%;      /* #F5F9FF Soft white-blue */
+    --foreground: 220 30% 10%;      /* #1C2526 Deep charcoal */
+    --card: 210 30% 94%;           /* #E6ECF5 Light blue-gray */
+    --card-foreground: 220 30% 10%; /* #1C2526 Deep charcoal */
+    --popover: 210 40% 98%;        /* #F5F9FF Soft white-blue */
+    --popover-foreground: 220 30% 10%; /* #1C2526 Deep charcoal */
+    --primary: 180 70% 40%;         /* #00A3AD Teal (slightly darker for balance) */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF White */
+    --secondary: 210 20% 90%;       /* #DDE4EE Light gray-blue */
+    --secondary-foreground: 220 30% 10%; /* #1C2526 Deep charcoal */
+    --muted: 210 20% 90%;           /* #DDE4EE Light gray-blue */
+    --muted-foreground: 220 15% 40%; /* #5C6B73 Mid-gray */
+    --accent: 180 70% 40%;          /* #00A3AD Teal (consistent with primary) */
+    --accent-foreground: 0 0% 100%;  /* #FFFFFF White */
+    --destructive: 0 65% 50%;       /* #E63946 Soft red */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF White */
+    --border: 210 25% 80%;          /* #C4CED9 Light slate */
+    --input: 210 25% 80%;           /* #C4CED9 Light slate */
+    --ring: 180 70% 40%;            /* #00A3AD Teal */
+    --radius: 0.75rem;              /* Increased for smoother rounded corners */
+    --chart-1: 180 70% 40%;         /* #00A3AD Teal */
+    --chart-2: 260 60% 50%;         /* #7B68EE Soft purple */
+    --chart-3: 220 30% 50%;         /* #6B7280 Mid-gray */
+    --chart-4: 160 60% 45%;         /* #4AC8B8 Light teal */
+    --chart-5: 280 65% 60%;         /* #9575DE Light purple */
   }
 
   .dark {
-    --background: 240 33% 14%;      /* #1A1A2E Deep navy blue */
-    --foreground: 0 0% 88%;         /* #E0E0E0 Soft off-white */
-    --card: 223 47% 16%;          /* #16213E Darker blue-gray */
-    --card-foreground: 0 0% 88%;    /* #E0E0E0 Soft off-white */
-    --popover: 240 33% 14%;       /* #1A1A2E Deep navy blue */
-    --popover-foreground: 0 0% 88%; /* #E0E0E0 Soft off-white */
-    --primary: 345 100% 59%;        /* #FF2E63 Neon pink */
-    --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 220 8% 25%;        /* #393E46 Mid-tone gray */
-    --secondary-foreground: 0 0% 88%;/* #E0E0E0 Soft off-white */
-    --muted: 220 8% 25%;            /* #393E46 Mid-tone gray */
-    --muted-foreground: 210 17% 69%; /* #A0AEC0 Light gray */
-    --accent: 183 100% 36%;         /* #00ADB5 Neon teal */
-    --accent-foreground: 0 0% 100%;  /* White */
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 218 17% 35%;          /* #4A5568 Slate gray */
-    --input: 218 17% 35%;           /* #4A5568 Slate gray */
-    --ring: 183 100% 36%;           /* #00ADB5 Neon teal (accent for dark theme ring) */
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: 230 30% 12%;      /* #161A2B Deep blue */
+    --foreground: 0 0% 90%;         /* #E6E6E6 Off-white */
+    --card: 230 35% 15%;           /* #1B2139 Darker blue */
+    --card-foreground: 0 0% 90%;    /* #E6E6E6 Off-white */
+    --popover: 230 30% 12%;        /* #161A2B Deep blue */
+    --popover-foreground: 0 0% 90%; /* #E6E6E6 Off-white */
+    --primary: 340 80% 55%;         /* #F72585 Neon pink */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF White */
+    --secondary: 230 20% 20%;       /* #2A3147 Mid blue-gray */
+    --secondary-foreground: 0 0% 90%; /* #E6E6E6 Off-white */
+    --muted: 230 20% 20%;           /* #2A3147 Mid blue-gray */
+    --muted-foreground: 220 15% 60%; /* #99A3B0 Light gray */
+    --accent: 180 70% 40%;          /* #00A3AD Teal (consistent with light theme) */
+    --accent-foreground: 0 0% 100%;  /* #FFFFFF White */
+    --destructive: 0 60% 40%;       /* #CC3333 Darker red */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF White */
+    --border: 220 15% 30%;          /* #4B5563 Slate gray */
+    --input: 220 15% 30%;           /* #4B5563 Slate gray */
+    --ring: 180 70% 40%;            /* #00A3AD Teal */
+    --chart-1: 180 70% 40%;         /* #00A3AD Teal */
+    --chart-2: 260 60% 50%;         /* #7B68EE Soft purple */
+    --chart-3: 220 20% 30%;         /* #4B5563 Dark gray */
+    --chart-4: 160 60% 45%;         /* #4AC8B8 Light teal */
+    --chart-5: 280 65% 60%;         /* #9575DE Light purple */
   }
 }
 
@@ -67,17 +67,30 @@
     @apply bg-background text-foreground;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+  /* Enhanced button and card hover effects */
+  .btn {
+    @apply px-4 py-2 rounded-[--radius] transition-all duration-300;
+  }
+  .btn:hover {
+    @apply bg-accent text-accent-foreground scale-105;
+  }
+  .card {
+    @apply bg-card text-card-foreground rounded-[--radius] shadow-lg transition-all duration-300;
+  }
+  .card:hover {
+    @apply scale-102 shadow-xl;
+  }
 }
 
-/* Page transition placeholder - can be expanded with libraries like framer-motion */
+/* Refined page transitions for multi-page portfolio */
 .page-transition-enter {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(10px);
 }
 .page-transition-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 300ms, transform 300ms;
+  transition: opacity 400ms ease, transform 400ms ease;
 }
 .page-transition-exit {
   opacity: 1;
@@ -85,6 +98,6 @@
 }
 .page-transition-exit-active {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 300ms, transform 300ms;
+  transform: translateY(10px);
+  transition: opacity 400ms ease, transform 400ms ease;
 }
