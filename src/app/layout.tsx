@@ -57,7 +57,7 @@ export default function RootLayout({
           >
             <div className="relative flex min-h-screen flex-col bg-background">
               <Navbar />
-              <main className="flex-1 container py-8 md:py-12">{children}</main>
+              <main className="flex-1 container mx-auto max-w-screen-xl py-8 md:py-12">{children}</main>
               {/* Optional Footer can be added here */}
               {/* <footer className="py-6 md:px-8 md:py-0 border-t">
                 <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
