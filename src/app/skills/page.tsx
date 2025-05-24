@@ -2,21 +2,6 @@ import { PageTitle } from "@/components/page-title";
 import { SkillCard } from "@/components/skill-card";
 import { Code, Database, LayoutPanelLeft, Brain, BarChart3, Cloud } from "lucide-react"; // Example icons
 
-const skillsData = [
-  { name: "JavaScript", icon: Code, level: "Expert" as const, description: "Modern JS (ES6+), Async/Await, DOM Manipulation" },
-  { name: "TypeScript", icon: Code, level: "Advanced" as const, description: "Strong Typing, Interfaces, Generics" },
-  { name: "React & Next.js", icon: LayoutPanelLeft, level: "Advanced" as const, description: "Component Architecture, Hooks, SSR, SSG" },
-  { name: "Node.js & Express", icon: Code, level: "Intermediate" as const, description: "REST APIs, Middleware, Backend Logic" },
-  { name: "Python", icon: Code, level: "Advanced" as const, description: "Data Science, ML, Web Scraping, Automation" },
-  { name: "Machine Learning", icon: Brain, level: "Intermediate" as const, description: "Scikit-learn, TensorFlow, PyTorch Basics" },
-  { name: "Data Science", icon: BarChart3, level: "Intermediate" as const, description: "Pandas, NumPy, Matplotlib, Seaborn" },
-  { name: "SQL & NoSQL", icon: Database, level: "Intermediate" as const, description: "PostgreSQL, MongoDB, Database Design" },
-  { name: "UI/UX Design", icon: LayoutPanelLeft, level: "Intermediate" as const, description: "Figma, Adobe XD, User-Centered Design" },
-  { name: "HTML & CSS", icon: Code, level: "Expert" as const, description: "Semantic HTML, CSS Grid, Flexbox, Tailwind CSS" },
-  { name: "Git & GitHub", icon: GithubIcon, level: "Expert" as const, description: "Version Control, Branching, Collaboration" }, // Using a custom GithubIcon for consistency or specific style
-  { name: "Cloud Platforms (AWS/GCP Basics)", icon: Cloud, level: "Beginner" as const, description: "EC2, S3, Lambda, Cloud Functions basics" },
-];
-
 // Simple Github icon as lucide-react's Github is already used for social links.
 // Or you can import it as `import { Github as GithubLucideIcon } from "lucide-react"` and use GithubLucideIcon
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -36,6 +21,21 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <path d="M9 18c-4.51 2-5-2-7-2" />
   </svg>
 );
+
+const skillsData = [
+  { name: "JavaScript", icon: Code, level: "Expert" as const, description: "Modern JS (ES6+), Async/Await, DOM Manipulation" },
+  { name: "TypeScript", icon: Code, level: "Advanced" as const, description: "Strong Typing, Interfaces, Generics" },
+  { name: "React & Next.js", icon: LayoutPanelLeft, level: "Advanced" as const, description: "Component Architecture, Hooks, SSR, SSG" },
+  { name: "Node.js & Express", icon: Code, level: "Intermediate" as const, description: "REST APIs, Middleware, Backend Logic" },
+  { name: "Python", icon: Code, level: "Advanced" as const, description: "Data Science, ML, Web Scraping, Automation" },
+  { name: "Machine Learning", icon: Brain, level: "Intermediate" as const, description: "Scikit-learn, TensorFlow, PyTorch Basics" },
+  { name: "Data Science", icon: BarChart3, level: "Intermediate" as const, description: "Pandas, NumPy, Matplotlib, Seaborn" },
+  { name: "SQL & NoSQL", icon: Database, level: "Intermediate" as const, description: "PostgreSQL, MongoDB, Database Design" },
+  { name: "UI/UX Design", icon: LayoutPanelLeft, level: "Intermediate" as const, description: "Figma, Adobe XD, User-Centered Design" },
+  { name: "HTML & CSS", icon: Code, level: "Expert" as const, description: "Semantic HTML, CSS Grid, Flexbox, Tailwind CSS" },
+  { name: "Git & GitHub", icon: GithubIcon, level: "Expert" as const, description: "Version Control, Branching, Collaboration" }, // Using a custom GithubIcon for consistency or specific style
+  { name: "Cloud Platforms (AWS/GCP Basics)", icon: Cloud, level: "Beginner" as const, description: "EC2, S3, Lambda, Cloud Functions basics" },
+];
 
 
 export default function SkillsPage() {
