@@ -11,13 +11,12 @@ export default function AboutPage() {
       <section className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
         <div className="w-48 h-48 md:w-60 md:h-60 relative rounded-full overflow-hidden shadow-xl border-4 border-primary/50">
           <Image
-            src="https://placehold.co/300x300.png"
+            src="/images/profile.jpg"
             alt="Syam Gowtham Geddam"
-            layout="fill"
-            objectFit="cover"
+            fill
             priority
             data-ai-hint="profile picture"
-            className="transform hover:scale-105 transition-transform duration-300"
+            className="object-cover transform hover:scale-105 transition-transform duration-300"
           />
         </div>
         <div className="flex-1 text-center md:text-left">
@@ -25,8 +24,7 @@ export default function AboutPage() {
             Syam Gowtham <span className="text-primary">Geddam</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-            Software Engineer | Designer | ML Enthusiast | Web Developer | Data
-            Scientist
+            Software Engineer | ML Enthusiast | Web Developer | Data Scientist
           </p>
           <p className="text-lg text-foreground/80 leading-relaxed mb-8 max-w-2xl mx-auto md:mx-0">
             Welcome to my portfolio! I am a passionate and versatile student
