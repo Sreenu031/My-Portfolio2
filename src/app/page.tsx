@@ -1,16 +1,42 @@
-
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription as UiCardDescription } from "@/components/ui/card"; // Renamed CardDescription to avoid conflict
-import { Download, Send, Mail, Phone, MapPin, Code, Database, LayoutPanelLeft, Brain, BarChart3, Cloud, CalendarDays, GraduationCap, Award as AwardIcon, ExternalLink, Briefcase } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription as UiCardDescription,
+} from "@/components/ui/card"; // Renamed CardDescription to avoid conflict
+import {
+  Download,
+  Send,
+  Mail,
+  Phone,
+  MapPin,
+  Code,
+  Database,
+  LayoutPanelLeft,
+  Brain,
+  BarChart3,
+  Cloud,
+  CalendarDays,
+  GraduationCap,
+  Award as AwardIcon,
+  ExternalLink,
+  Briefcase,
+  Github,
+} from "lucide-react";
 import { RESUME_PATH } from "@/lib/constants";
 import { PageTitle } from "@/components/page-title";
 import { ProjectCard, type Project } from "@/components/project-card";
 import { SkillCard } from "@/components/skill-card";
-import { CertificationCard, type Certification } from "@/components/certification-card";
+import {
+  CertificationCard,
+  type Certification,
+} from "@/components/certification-card";
 import { ExperienceCard, type Experience } from "@/components/experience-card";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -26,7 +52,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-
 
 // GithubIcon (from skills page)
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -61,7 +86,9 @@ interface EducationEntry {
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters." }),
 });
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
@@ -69,8 +96,16 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 const projectsData: Project[] = [
   {
     title: "AI Powered E-commerce Platform",
-    description: "A smart e-commerce solution leveraging machine learning for personalized recommendations and inventory management. Built with a modern tech stack for scalability and performance.",
-    technologies: ["Next.js", "Python (Flask/Django)", "PostgreSQL", "Docker", "AWS", "TensorFlow"],
+    description:
+      "A smart e-commerce solution leveraging machine learning for personalized recommendations and inventory management. Built with a modern tech stack for scalability and performance.",
+    technologies: [
+      "Next.js",
+      "Python (Flask/Django)",
+      "PostgreSQL",
+      "Docker",
+      "AWS",
+      "TensorFlow",
+    ],
     imageUrl: "https://placehold.co/600x400.png",
     imageHint: "ecommerce platform",
     projectUrl: "#",
@@ -78,7 +113,8 @@ const projectsData: Project[] = [
   },
   {
     title: "Data Visualization Dashboard",
-    description: "An interactive dashboard for visualizing complex datasets, enabling users to uncover insights through dynamic charts and filters. Focused on user-friendly design and real-time data processing.",
+    description:
+      "An interactive dashboard for visualizing complex datasets, enabling users to uncover insights through dynamic charts and filters. Focused on user-friendly design and real-time data processing.",
     technologies: ["React", "D3.js", "Node.js", "MongoDB", "GraphQL"],
     imageUrl: "https://placehold.co/600x400.png",
     imageHint: "data dashboard",
@@ -87,26 +123,93 @@ const projectsData: Project[] = [
   },
   {
     title: "Mobile Health Companion App",
-    description: "A cross-platform mobile application designed to help users track their fitness goals, monitor health metrics, and receive personalized wellness tips. Includes gamification and social features.",
-    technologies: ["React Native", "Firebase", "Node.js", "Express.js", "Apple HealthKit / Google Fit API"],
+    description:
+      "A cross-platform mobile application designed to help users track their fitness goals, monitor health metrics, and receive personalized wellness tips. Includes gamification and social features.",
+    technologies: [
+      "React Native",
+      "Firebase",
+      "Node.js",
+      "Express.js",
+      "Apple HealthKit / Google Fit API",
+    ],
     imageUrl: "https://placehold.co/600x400.png",
     imageHint: "mobile health",
   },
 ];
 
 const skillsData = [
-  { name: "JavaScript", icon: Code, level: "Expert" as const, description: "Modern JS (ES6+), Async/Await, DOM Manipulation" },
-  { name: "TypeScript", icon: Code, level: "Advanced" as const, description: "Strong Typing, Interfaces, Generics" },
-  { name: "React & Next.js", icon: LayoutPanelLeft, level: "Advanced" as const, description: "Component Architecture, Hooks, SSR, SSG" },
-  { name: "Node.js & Express", icon: Code, level: "Intermediate" as const, description: "REST APIs, Middleware, Backend Logic" },
-  { name: "Python", icon: Code, level: "Advanced" as const, description: "Data Science, ML, Web Scraping, Automation" },
-  { name: "Machine Learning", icon: Brain, level: "Intermediate" as const, description: "Scikit-learn, TensorFlow, PyTorch Basics" },
-  { name: "Data Science", icon: BarChart3, level: "Intermediate" as const, description: "Pandas, NumPy, Matplotlib, Seaborn" },
-  { name: "SQL & NoSQL", icon: Database, level: "Intermediate" as const, description: "PostgreSQL, MongoDB, Database Design" },
-  { name: "UI/UX Design", icon: LayoutPanelLeft, level: "Intermediate" as const, description: "Figma, Adobe XD, User-Centered Design" },
-  { name: "HTML & CSS", icon: Code, level: "Expert" as const, description: "Semantic HTML, CSS Grid, Flexbox, Tailwind CSS" },
-  { name: "Git & GitHub", icon: GithubIcon, level: "Expert" as const, description: "Version Control, Branching, Collaboration" },
-  { name: "Cloud Platforms (AWS/GCP Basics)", icon: Cloud, level: "Beginner" as const, description: "EC2, S3, Lambda, Cloud Functions basics" },
+  {
+    name: "JavaScript",
+    icon: Code,
+    level: "Expert" as const,
+    description: "Modern JS (ES6+), Async/Await, DOM Manipulation",
+  },
+  {
+    name: "TypeScript",
+    icon: Code,
+    level: "Advanced" as const,
+    description: "Strong Typing, Interfaces, Generics",
+  },
+  {
+    name: "React & Next.js",
+    icon: LayoutPanelLeft,
+    level: "Advanced" as const,
+    description: "Component Architecture, Hooks, SSR, SSG",
+  },
+  {
+    name: "Node.js & Express",
+    icon: Code,
+    level: "Intermediate" as const,
+    description: "REST APIs, Middleware, Backend Logic",
+  },
+  {
+    name: "Python",
+    icon: Code,
+    level: "Advanced" as const,
+    description: "Data Science, ML, Web Scraping, Automation",
+  },
+  {
+    name: "Machine Learning",
+    icon: Brain,
+    level: "Intermediate" as const,
+    description: "Scikit-learn, TensorFlow, PyTorch Basics",
+  },
+  {
+    name: "Data Science",
+    icon: BarChart3,
+    level: "Intermediate" as const,
+    description: "Pandas, NumPy, Matplotlib, Seaborn",
+  },
+  {
+    name: "SQL & NoSQL",
+    icon: Database,
+    level: "Intermediate" as const,
+    description: "PostgreSQL, MongoDB, Database Design",
+  },
+  {
+    name: "UI/UX Design",
+    icon: LayoutPanelLeft,
+    level: "Intermediate" as const,
+    description: "Figma, Adobe XD, User-Centered Design",
+  },
+  {
+    name: "HTML & CSS",
+    icon: Code,
+    level: "Expert" as const,
+    description: "Semantic HTML, CSS Grid, Flexbox, Tailwind CSS",
+  },
+  {
+    name: "Git & GitHub",
+    icon: Github,
+    level: "Expert" as const,
+    description: "Version Control, Branching, Collaboration",
+  },
+  {
+    name: "Cloud Platforms (AWS/GCP Basics)",
+    icon: Cloud,
+    level: "Beginner" as const,
+    description: "EC2, S3, Lambda, Cloud Functions basics",
+  },
 ];
 
 const educationData: EducationEntry[] = [
@@ -114,17 +217,19 @@ const educationData: EducationEntry[] = [
     degree: "Master of Science in Computer Science",
     institution: "University of Tech Excellence (UTE)",
     duration: "2023 - Present",
-    description: "Specializing in Artificial Intelligence and Software Engineering. Actively involved in research projects focusing on natural language processing and computer vision.",
+    description:
+      "Specializing in Artificial Intelligence and Software Engineering. Actively involved in research projects focusing on natural language processing and computer vision.",
     logoUrl: "https://placehold.co/100x100.png",
-    logoHint: "university logo"
+    logoHint: "university logo",
   },
   {
     degree: "Bachelor of Technology in Information Technology",
     institution: "Institute of Foundational Learning (IFL)",
     duration: "2019 - 2023",
-    description: "Graduated with honors, focusing on web development, database management, and algorithms. Led the university coding club and participated in several hackathons.",
+    description:
+      "Graduated with honors, focusing on web development, database management, and algorithms. Led the university coding club and participated in several hackathons.",
     logoUrl: "https://placehold.co/100x100.png",
-    logoHint: "institute logo"
+    logoHint: "institute logo",
   },
 ];
 
@@ -136,7 +241,7 @@ const certificationsData: Certification[] = [
     credentialId: "AWS-CSA-12345",
     credentialUrl: "#",
     logoUrl: "https://placehold.co/50x50.png",
-    logoHint: "aws logo"
+    logoHint: "aws logo",
   },
   {
     name: "Google Cloud Certified - Professional Data Engineer",
@@ -144,23 +249,24 @@ const certificationsData: Certification[] = [
     dateAchieved: "July 2023",
     credentialUrl: "#",
     logoUrl: "https://placehold.co/50x50.png",
-    logoHint: "google cloud logo"
+    logoHint: "google cloud logo",
   },
   {
     name: "Certified Kubernetes Administrator (CKA)",
-    issuingOrganization: "The Linux Foundation & Cloud Native Computing Foundation (CNCF)",
+    issuingOrganization:
+      "The Linux Foundation & Cloud Native Computing Foundation (CNCF)",
     credentialUrl: "#",
     logoUrl: "https://placehold.co/50x50.png",
-    logoHint: "kubernetes logo"
+    logoHint: "kubernetes logo",
   },
-   {
+  {
     name: "Microsoft Certified: Azure Fundamentals",
     issuingOrganization: "Microsoft",
     dateAchieved: "January 2023",
     credentialId: "MS-AZ-67890",
     credentialUrl: "#",
     logoUrl: "https://placehold.co/50x50.png",
-    logoHint: "microsoft azure logo"
+    logoHint: "microsoft azure logo",
   },
 ];
 
@@ -177,7 +283,7 @@ const experiencesData: Experience[] = [
       "Contributed to CI/CD pipeline improvements using Jenkins and Docker.",
     ],
     logoUrl: "https://placehold.co/100x100.png",
-    logoHint: "company logo"
+    logoHint: "company logo",
   },
   {
     title: "Machine Learning Research Assistant",
@@ -191,7 +297,7 @@ const experiencesData: Experience[] = [
       "Presented research findings at a university-level symposium.",
     ],
     logoUrl: "https://placehold.co/100x100.png",
-    logoHint: "university lab"
+    logoHint: "university lab",
   },
   {
     title: "Lead Developer - Capstone Project",
@@ -206,7 +312,6 @@ const experiencesData: Experience[] = [
     ],
   },
 ];
-
 
 export default function SinglePagePortfolio() {
   const { toast } = useToast();
@@ -232,7 +337,9 @@ export default function SinglePagePortfolio() {
   const scrollMarginClass = "scroll-mt-20 pt-10 md:pt-16"; // Adjusted scroll margin and added padding top
 
   return (
-    <div className="space-y-20 md:space-y-28 pb-20"> {/* Overall page spacing */}
+    <div className="space-y-20 md:space-y-28 pb-20">
+      {" "}
+      {/* Overall page spacing */}
       {/* About Section */}
       <section id="about" className={scrollMarginClass}>
         <div className="space-y-12">
@@ -252,14 +359,15 @@ export default function SinglePagePortfolio() {
                 Syam Gowtham <span className="text-primary">Geddam</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-                Software Engineer | ML Enthusiast | Web Developer | Data Scientist
+                Software Engineer | ML Enthusiast | Web Developer | Data
+                Scientist
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed mb-8 max-w-2xl mx-auto md:mx-0">
                 Welcome to my portfolio! I am a passionate and versatile student
-                skilled in a wide array of technologies and disciplines. My journey
-                in tech is driven by a curiosity to solve complex problems and build
-                impactful solutions. Here, you'll find a glimpse into my projects,
-                skills, and experiences.
+                skilled in a wide array of technologies and disciplines. My
+                journey in tech is driven by a curiosity to solve complex
+                problems and build impactful solutions. Here, you'll find a
+                glimpse into my projects, skills, and experiences.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button
@@ -293,14 +401,14 @@ export default function SinglePagePortfolio() {
             </CardHeader>
             <CardContent className="text-foreground/80 leading-relaxed space-y-4 text-center md:text-left px-8 pb-8">
               <p>
-                As a dedicated student, I am continuously exploring the frontiers
-                of technology. My expertise spans full-stack web development,
-                where I enjoy creating seamless user experiences, to the intricate
-                world of machine learning and data science, where I leverage data
-                to derive insights and build intelligent systems. I am also
-                proficient in UI/UX design, believing that great functionality
-                must be accompanied by intuitive and aesthetically pleasing
-                interfaces.
+                As a dedicated student, I am continuously exploring the
+                frontiers of technology. My expertise spans full-stack web
+                development, where I enjoy creating seamless user experiences,
+                to the intricate world of machine learning and data science,
+                where I leverage data to derive insights and build intelligent
+                systems. I am also proficient in UI/UX design, believing that
+                great functionality must be accompanied by intuitive and
+                aesthetically pleasing interfaces.
               </p>
               <p>
                 I thrive in collaborative environments and am always eager to
@@ -312,11 +420,13 @@ export default function SinglePagePortfolio() {
           </Card>
         </div>
       </section>
-
       {/* Projects Section */}
       <section id="projects" className={scrollMarginClass}>
         <div className="space-y-10">
-          <PageTitle title="My Projects" subtitle="A selection of projects that showcase my skills and passion for technology. Each project reflects my dedication to creating innovative and practical solutions." />
+          <PageTitle
+            title="My Projects"
+            subtitle="A selection of projects that showcase my skills and passion for technology. Each project reflects my dedication to creating innovative and practical solutions."
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projectsData.map((project) => (
               <ProjectCard key={project.title} project={project} />
@@ -324,26 +434,39 @@ export default function SinglePagePortfolio() {
           </div>
         </div>
       </section>
-
       {/* Skills Section */}
       <section id="skills" className={scrollMarginClass}>
         <div className="space-y-10">
-          <PageTitle title="My Skills" subtitle="A curated list of my technical skills and proficiencies, ranging from programming languages and frameworks to tools and methodologies." />
+          <PageTitle
+            title="My Skills"
+            subtitle="A curated list of my technical skills and proficiencies, ranging from programming languages and frameworks to tools and methodologies."
+          />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {skillsData.map((skill) => (
-              <SkillCard key={skill.name} skillName={skill.name} icon={skill.icon} level={skill.level} description={skill.description} />
+              <SkillCard
+                key={skill.name}
+                skillName={skill.name}
+                icon={skill.icon}
+                level={skill.level}
+                description={skill.description}
+              />
             ))}
           </div>
         </div>
       </section>
-
       {/* Education Section */}
       <section id="education" className={scrollMarginClass}>
         <div className="space-y-10">
-          <PageTitle title="Education" subtitle="My academic journey and qualifications that have shaped my expertise and passion for technology." />
+          <PageTitle
+            title="Education"
+            subtitle="My academic journey and qualifications that have shaped my expertise and passion for technology."
+          />
           <div className="space-y-8">
             {educationData.map((edu, index) => (
-              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl border-border hover:border-primary/50 overflow-hidden">
+              <Card
+                key={index}
+                className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl border-border hover:border-primary/50 overflow-hidden"
+              >
                 <CardHeader className="bg-muted/30 p-6">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                     {/* Optional Logo
@@ -354,8 +477,12 @@ export default function SinglePagePortfolio() {
                     )}
                     */}
                     <div className="flex-grow">
-                      <CardTitle className="text-2xl font-semibold text-primary mb-1">{edu.degree}</CardTitle>
-                      <p className="text-lg text-foreground/90">{edu.institution}</p>
+                      <CardTitle className="text-2xl font-semibold text-primary mb-1">
+                        {edu.degree}
+                      </CardTitle>
+                      <p className="text-lg text-foreground/90">
+                        {edu.institution}
+                      </p>
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground mt-2 sm:mt-0 whitespace-nowrap">
                       <CalendarDays className="mr-2 h-4 w-4" />
@@ -365,7 +492,9 @@ export default function SinglePagePortfolio() {
                 </CardHeader>
                 {edu.description && (
                   <CardContent className="p-6">
-                    <UiCardDescription className="text-foreground/80 leading-relaxed">{edu.description}</UiCardDescription>
+                    <UiCardDescription className="text-foreground/80 leading-relaxed">
+                      {edu.description}
+                    </UiCardDescription>
                   </CardContent>
                 )}
               </Card>
@@ -373,11 +502,13 @@ export default function SinglePagePortfolio() {
           </div>
         </div>
       </section>
-
       {/* Certifications Section */}
       <section id="certifications" className={scrollMarginClass}>
         <div className="space-y-10">
-          <PageTitle title="Certifications" subtitle="Validating my skills and knowledge through industry-recognized certifications." />
+          <PageTitle
+            title="Certifications"
+            subtitle="Validating my skills and knowledge through industry-recognized certifications."
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificationsData.map((cert) => (
               <CertificationCard key={cert.name} certification={cert} />
@@ -385,11 +516,13 @@ export default function SinglePagePortfolio() {
           </div>
         </div>
       </section>
-
       {/* Experience Section */}
       <section id="experience" className={scrollMarginClass}>
         <div className="space-y-10">
-          <PageTitle title="My Experience" subtitle="A timeline of my professional roles and significant academic projects where I've applied and honed my skills." />
+          <PageTitle
+            title="My Experience"
+            subtitle="A timeline of my professional roles and significant academic projects where I've applied and honed my skills."
+          />
           <div className="space-y-8">
             {experiencesData.map((exp, index) => (
               <ExperienceCard key={index} experience={exp} />
@@ -397,23 +530,32 @@ export default function SinglePagePortfolio() {
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className={scrollMarginClass}>
         <div className="space-y-10">
-          <PageTitle title="Get in Touch" subtitle="I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out!" />
+          <PageTitle
+            title="Get in Touch"
+            subtitle="I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out!"
+          />
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <Card className="shadow-xl rounded-xl border-border hover:border-primary/50 transition-shadow duration-300">
               <CardHeader>
-                <CardTitle className="text-2xl text-primary">Contact Information</CardTitle>
-                <UiCardDescription>Here are a few ways to reach me directly.</UiCardDescription>
+                <CardTitle className="text-2xl text-primary">
+                  Contact Information
+                </CardTitle>
+                <UiCardDescription>
+                  Here are a few ways to reach me directly.
+                </UiCardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-6 w-6 text-primary" />
                   <div>
                     <p className="font-semibold">Email</p>
-                    <a href="mailto:syam.geddam@example.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a
+                      href="mailto:syam.geddam@example.com"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
                       syam.geddam@example.com
                     </a>
                   </div>
@@ -437,11 +579,16 @@ export default function SinglePagePortfolio() {
 
             <Card className="shadow-xl rounded-xl border-border hover:border-primary/50 transition-shadow duration-300">
               <CardHeader>
-                <CardTitle className="text-2xl text-primary">Send Me a Message</CardTitle>
+                <CardTitle className="text-2xl text-primary">
+                  Send Me a Message
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmitContact)} className="space-y-6">
+                  <form
+                    onSubmit={form.handleSubmit(onSubmitContact)}
+                    className="space-y-6"
+                  >
                     <FormField
                       control={form.control}
                       name="name"
@@ -449,7 +596,11 @@ export default function SinglePagePortfolio() {
                         <FormItem>
                           <FormLabel>Full Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your Name" {...field} className="bg-background/70 focus:bg-background" />
+                            <Input
+                              placeholder="Your Name"
+                              {...field}
+                              className="bg-background/70 focus:bg-background"
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -462,7 +613,12 @@ export default function SinglePagePortfolio() {
                         <FormItem>
                           <FormLabel>Email Address</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="your.email@example.com" {...field} className="bg-background/70 focus:bg-background" />
+                            <Input
+                              type="email"
+                              placeholder="your.email@example.com"
+                              {...field}
+                              className="bg-background/70 focus:bg-background"
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -486,9 +642,15 @@ export default function SinglePagePortfolio() {
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" className="w-full rounded-full shadow-lg hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105" disabled={form.formState.isSubmitting}>
+                    <Button
+                      type="submit"
+                      className="w-full rounded-full shadow-lg hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105"
+                      disabled={form.formState.isSubmitting}
+                    >
                       <Send className="mr-2 h-5 w-5" />
-                      {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+                      {form.formState.isSubmitting
+                        ? "Sending..."
+                        : "Send Message"}
                     </Button>
                   </form>
                 </Form>
