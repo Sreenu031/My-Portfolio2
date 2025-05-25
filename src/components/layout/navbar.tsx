@@ -18,24 +18,36 @@ export function Navbar() {
   const [activeLink, setActiveLink] = useState(navLinks[0]?.href || "/#about");
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10); // Adjust threshold as needed
 
-      let currentSection = navLinks[0]?.href || "/#about";
+      let currentSection = activeLink; // Keep current active section as default
+      let closestSection = null;
+      let closestDistance = Infinity;
+
+      // Find the section that's closest to the top of the viewport
       for (const link of navLinks) {
         const section = document.getElementById(link.id);
         if (section) {
           const rect = section.getBoundingClientRect();
-          // Check if section is in viewport, considering navbar height (approx 64px or 4rem)
-          if (rect.top <= 80 && rect.bottom >= 80) {
-            currentSection = link.href;
-            break;
+          const distanceFromTop = Math.abs(rect.top - 80); // 80px offset for navbar
+
+          // If section is in viewport or close to it
+          if (rect.top <= 100 && rect.bottom >= -100) {
+            if (distanceFromTop < closestDistance) {
+              closestDistance = distanceFromTop;
+              closestSection = link.href;
+            }
           }
         }
       }
+
+      if (closestSection) {
+        currentSection = closestSection;
+      }
+
       setActiveLink(currentSection);
     };
 
@@ -70,8 +82,7 @@ export function Navbar() {
           <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
             Syam Gowtham Geddam
           </span>
-        </Link>
-
+        </Link>{" "}
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
           {navLinks.map((link) => (
@@ -80,7 +91,7 @@ export function Navbar() {
               variant="ghost"
               asChild
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary px-3 py-2",
+                "text-sm font-medium transition-colors hover:text-foreground hover:bg-foreground/10 px-3 py-2",
                 activeLink === link.href
                   ? "text-primary bg-muted"
                   : "text-foreground/70 hover:text-foreground/90"
@@ -92,7 +103,6 @@ export function Navbar() {
             </Button>
           ))}
         </nav>
-
         <div className="hidden md:flex items-center space-x-2">
           {socialLinks.map((social) => (
             <Button
@@ -100,7 +110,7 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               asChild
-              className="text-foreground/70 hover:text-primary"
+              className="text-foreground/70 hover:text-foreground hover:bg-foreground/10"
             >
               <Link
                 href={social.href}
@@ -124,7 +134,6 @@ export function Navbar() {
             </Link>
           </Button>
         </div>
-
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center">
           <ThemeToggleButton />
@@ -155,7 +164,7 @@ export function Navbar() {
                       href={link.href}
                       onClick={() => setActiveLink(link.href)}
                       className={cn(
-                        "text-md font-medium transition-colors hover:text-primary py-2 px-3 rounded-md flex items-center",
+                        "text-md font-medium transition-colors hover:text-foreground hover:bg-foreground/10 py-2 px-3 rounded-md flex items-center",
                         activeLink === link.href
                           ? "bg-muted text-primary"
                           : "text-foreground/80"
@@ -168,6 +177,7 @@ export function Navbar() {
                 ))}
               </nav>
               <div className="border-t border-border pt-6 mt-6">
+                {" "}
                 <div className="flex justify-center space-x-2 mb-4">
                   {socialLinks.map((social) => (
                     <Button
@@ -175,7 +185,7 @@ export function Navbar() {
                       variant="outline"
                       size="icon"
                       asChild
-                      className="text-foreground/70 hover:text-primary flex-1"
+                      className="text-foreground/70 hover:text-foreground hover:bg-foreground/10 flex-1"
                     >
                       <Link
                         href={social.href}

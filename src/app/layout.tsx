@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Toaster } from "@/components/ui/toaster";
-import { FirebaseAnalyticsProvider } from "@/components/firebase-analytics-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,20 +49,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <FirebaseAnalyticsProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="relative flex min-h-screen flex-col bg-background">
-              <Navbar />
-              <main className="flex-1 container mx-auto max-w-screen-xl py-8 md:py-12">
-                {children}
-              </main>
-              {/* Optional Footer can be added here */}
-              {/* <footer className="py-6 md:px-8 md:py-0 border-t">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative flex min-h-screen flex-col bg-background">
+            <Navbar />
+            <main className="flex-1 container mx-auto max-w-screen-xl py-8 md:py-12">
+              {children}
+            </main>
+            {/* Optional Footer can be added here */}
+            {/* <footer className="py-6 md:px-8 md:py-0 border-t">
                 <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
                   <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
                     © {new Date().getFullYear()} Syam Gowtham Geddam. All rights
@@ -71,10 +69,9 @@ export default function RootLayout({
                   </p>
                 </div>
               </footer> */}
-            </div>
-            <Toaster />
-          </ThemeProvider>
-        </FirebaseAnalyticsProvider>
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,16 +1,15 @@
-
 import type { LucideIcon } from "lucide-react";
 import {
   Github,
   Linkedin,
   Home,
-  UserCircle2, // Changed from User to UserCircle2 for "About" if preferred
   Briefcase,
   Lightbulb,
   GraduationCap,
   Award,
   Mail,
   User, // For Experience
+  Code2, // For LeetCode
 } from "lucide-react";
 
 export interface NavLink {
@@ -24,8 +23,18 @@ export const navLinks: NavLink[] = [
   { href: "/#about", label: "About", icon: Home, id: "about" }, // Or UserCircle2
   { href: "/#projects", label: "Projects", icon: Briefcase, id: "projects" },
   { href: "/#skills", label: "Skills", icon: Lightbulb, id: "skills" },
-  { href: "/#education", label: "Education", icon: GraduationCap, id: "education" },
-  { href: "/#certifications", label: "Certifications", icon: Award, id: "certifications" },
+  {
+    href: "/#education",
+    label: "Education",
+    icon: GraduationCap,
+    id: "education",
+  },
+  {
+    href: "/#certifications",
+    label: "Certifications",
+    icon: Award,
+    id: "certifications",
+  },
   { href: "/#experience", label: "Experience", icon: User, id: "experience" },
   { href: "/#contact", label: "Contact", icon: Mail, id: "contact" },
 ];
@@ -42,6 +51,11 @@ export const socialLinks: SocialLink[] = [
     href: "https://www.linkedin.com/in/nameishyam/",
     label: "LinkedIn",
     icon: Linkedin,
+  },
+  {
+    href: "https://leetcode.com/nameishyam/",
+    label: "LeetCode",
+    icon: Code2,
   },
 ];
 

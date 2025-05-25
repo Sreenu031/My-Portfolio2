@@ -10,7 +10,13 @@ interface Props extends ThemeProviderProps {
 
 export const ThemeProvider: FC<Props> = ({ children, ...props }) => {
   return (
-    <NextThemesProvider {...props} attribute="class" defaultTheme="dark" enableSystem>
+    <NextThemesProvider
+      {...props}
+      attribute="class"
+      defaultTheme="light"
+      enableSystem={false}
+      storageKey="portfolio-theme"
+    >
       {children}
     </NextThemesProvider>
   );
