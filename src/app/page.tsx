@@ -35,12 +35,7 @@ import {
   type Certification,
 } from "@/components/certification-card";
 import { ExperienceCard, type Experience } from "@/components/experience-card";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 
 // EducationEntry Interface (from education page)
 interface EducationEntry {
@@ -245,8 +240,6 @@ const experiencesData: Experience[] = [
 ];
 
 export default function SinglePagePortfolio() {
-  const { toast } = useToast();
-
   const scrollMarginClass = "scroll-mt-20 pt-10 md:pt-16"; // Adjusted scroll margin and added padding top
 
   return (
