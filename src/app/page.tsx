@@ -23,10 +23,6 @@ import {
   BarChart3,
   Cloud,
   CalendarDays,
-  GraduationCap,
-  Award as AwardIcon,
-  ExternalLink,
-  Briefcase,
   Github,
   BrainCircuitIcon,
 } from "lucide-react";
@@ -42,36 +38,9 @@ import { ExperienceCard, type Experience } from "@/components/experience-card";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-
-// GithubIcon (from skills page)
-const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
-);
 
 // EducationEntry Interface (from education page)
 interface EducationEntry {
@@ -91,7 +60,6 @@ const contactFormSchema = z.object({
     .string()
     .min(10, { message: "Message must be at least 10 characters." }),
 });
-type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 // Data Arrays
 const projectsData: Project[] = [
@@ -233,87 +201,51 @@ const certificationsData: Certification[] = [
       "https://www.credly.com/badges/731241e3-2e69-4ec5-b7fd-d785789d91fa/linked_in_profile",
   },
   {
-    name: "Certified Kubernetes Administrator (CKA)",
-    issuingOrganization:
-      "The Linux Foundation & Cloud Native Computing Foundation (CNCF)",
-    credentialUrl: "#",
-    logoUrl: "https://placehold.co/50x50.png",
-    logoHint: "kubernetes logo",
+    name: "CCNA - Introduction to Networks",
+    issuingOrganization: "Cisco Networking Academy",
+    dateAchieved: "May 2024",
+    credentialUrl:
+      "https://www.credly.com/badges/a3f144c0-a8ca-4c2b-a8f7-82735959541f/linked_in_profile",
   },
   {
-    name: "Microsoft Certified: Azure Fundamentals",
-    issuingOrganization: "Microsoft",
-    dateAchieved: "January 2023",
-    credentialId: "MS-AZ-67890",
-    credentialUrl: "#",
-    logoUrl: "https://placehold.co/50x50.png",
-    logoHint: "microsoft azure logo",
+    name: "AWS Academy Graduate - Cloud Foundations",
+    issuingOrganization: "Amazon Web Services (AWS)",
+    dateAchieved: "February 2024",
+    credentialUrl:
+      "https://www.credly.com/badges/0c33512a-7b23-4404-86b2-133572ff72ca/linked_in_profile",
   },
 ];
 
 const experiencesData: Experience[] = [
   {
-    title: "Software Engineering Intern",
-    company: "Innovatech Solutions Inc.",
-    location: "San Francisco, CA (Remote)",
-    duration: "Summer 2023 (May - Aug)",
+    title: "Google Developer Student Club Lead",
+    company: "Googe Developer Student Club (GDSC)",
+    location: "University of SAHE, Vijayawada, India",
+    duration: "Aug 2024 - Present",
     descriptionPoints: [
-      "Developed and implemented new features for a flagship SaaS product using React, Node.js, and TypeScript, improving user engagement by 15%.",
-      "Collaborated with a cross-functional team of 10 engineers and designers in an Agile environment, participating in daily stand-ups, sprint planning, and retrospectives.",
-      "Authored unit and integration tests, achieving 90%+ code coverage for newly developed modules.",
-      "Contributed to CI/CD pipeline improvements using Jenkins and Docker.",
+      "Leading the GDSC chapter at University of SAHE, focusing on web development technologies.",
+      "Organizing workshops, hackathons, and coding competitions to foster a community of tech enthusiasts.",
+      "Collaborating with industry professionals to provide students with real-world insights and networking opportunities.",
+      "Mentoring junior students in web development best practices and project management.",
     ],
-    logoUrl: "https://placehold.co/100x100.png",
-    logoHint: "company logo",
+    logoUrl: "/images/gdg.jpg",
   },
   {
-    title: "Machine Learning Research Assistant",
-    company: "University of Tech Excellence - AI Lab",
-    location: "University City, Utopia",
-    duration: "Jan 2022 - May 2023",
+    title: "Web Development Intern",
+    company: "MotionCut co.",
+    location: "Remote",
+    duration: "Nov 2023 - Dec 2023",
     descriptionPoints: [
-      "Assisted senior researchers in developing a novel algorithm for anomaly detection in financial transactions, utilizing Python, Scikit-learn, and TensorFlow.",
-      "Preprocessed and analyzed large datasets (over 1TB) to extract meaningful features for model training.",
-      "Co-authored a research paper published in the 'Journal of Intelligent Systems'.",
-      "Presented research findings at a university-level symposium.",
+      "Developed and maintained responsive web applications using simple HTML, CSS, and JavaScript.",
+      "Collaborated with the design team to implement user-friendly interfaces and improve user experience.",
+      "Gained hands-on experience in version control using Git and collaborative development practices.",
     ],
-    logoUrl: "https://placehold.co/100x100.png",
-    logoHint: "university lab",
-  },
-  {
-    title: "Lead Developer - Capstone Project",
-    company: "Institute of Foundational Learning",
-    location: "Techville, Utopia",
-    duration: "Sep 2022 - Apr 2023",
-    descriptionPoints: [
-      "Led a team of 4 students to design and develop a campus event management platform.",
-      "Architected the full-stack application using MERN stack (MongoDB, Express.js, React, Node.js).",
-      "Managed project timelines, task delegation, and code reviews using Git and Trello.",
-      "Successfully launched the platform, adopted by 500+ students for event discovery and registration.",
-    ],
+    logoUrl: "/images/motioncut.png",
   },
 ];
 
 export default function SinglePagePortfolio() {
   const { toast } = useToast();
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  function onSubmitContact(data: ContactFormValues) {
-    console.log("Contact form submitted:", data);
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-      variant: "default",
-    });
-    form.reset();
-  }
 
   const scrollMarginClass = "scroll-mt-20 pt-10 md:pt-16"; // Adjusted scroll margin and added padding top
 
@@ -450,13 +382,6 @@ export default function SinglePagePortfolio() {
               >
                 <CardHeader className="bg-muted/30 p-6">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    {/* Optional Logo
-                    {edu.logoUrl && (
-                      <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 border-primary/30">
-                        <Image src={edu.logoUrl} alt={`${edu.institution} logo`} width={64} height={64} data-ai-hint={edu.logoHint} />
-                      </div>
-                    )}
-                    */}
                     <div className="flex-grow">
                       <CardTitle className="text-2xl font-semibold text-primary mb-1">
                         {edu.degree}
@@ -517,126 +442,48 @@ export default function SinglePagePortfolio() {
           <PageTitle
             title="Get in Touch"
             subtitle="I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out!"
-          />
-          <div className="grid md:grid-cols-2 gap-10 items-start">
-            <Card className="shadow-xl rounded-xl border-border hover:border-primary/50 transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl text-primary">
-                  Contact Information
-                </CardTitle>
-                <UiCardDescription>
-                  Here are a few ways to reach me directly.
-                </UiCardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-6 w-6 text-primary" />
-                  <div>
-                    <p className="font-semibold">Email</p>
-                    <a
-                      href="mailto:syam.geddam@example.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      syam.geddam@example.com
-                    </a>
+          />{" "}
+          <div className="flex justify-center">
+            <div className="w-full md:w-1/2">
+              <Card className="shadow-xl rounded-xl border-border hover:border-primary/50 transition-shadow duration-300">
+                <CardHeader>
+                  <CardTitle className="text-2xl text-primary">
+                    Contact Information
+                  </CardTitle>
+                  <UiCardDescription>
+                    Here are a few ways to reach me directly.
+                  </UiCardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Mail className="h-6 w-6 text-primary" />
+                    <div>
+                      <p className="font-semibold">Email</p>
+                      <a
+                        href="mailto:geddamgowtham4@gmail.com"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        geddamgowtham4@gmail.com
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-6 w-6 text-primary" />
-                  <div>
-                    <p className="font-semibold">Phone</p>
-                    <p className="text-muted-foreground">(123) 456-7890</p>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="h-6 w-6 text-primary" />
+                    <div>
+                      <p className="font-semibold">Phone</p>
+                      <p className="text-muted-foreground">(+91) 63051 79812</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-6 w-6 text-primary" />
-                  <div>
-                    <p className="font-semibold">Location</p>
-                    <p className="text-muted-foreground">Tech City, USA</p>
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="h-6 w-6 text-primary" />
+                    <div>
+                      <p className="font-semibold">Location</p>
+                      <p className="text-muted-foreground">Vijayawada, India</p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-xl rounded-xl border-border hover:border-primary/50 transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl text-primary">
-                  Send Me a Message
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Form {...form}>
-                  <form
-                    onSubmit={form.handleSubmit(onSubmitContact)}
-                    className="space-y-6"
-                  >
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Full Name</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="Your Name"
-                              {...field}
-                              className="bg-background/70 focus:bg-background"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email Address</FormLabel>
-                          <FormControl>
-                            <Input
-                              type="email"
-                              placeholder="your.email@example.com"
-                              {...field}
-                              className="bg-background/70 focus:bg-background"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Message</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="Tell me about your project or inquiry..."
-                              rows={5}
-                              {...field}
-                              className="bg-background/70 focus:bg-background"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <Button
-                      type="submit"
-                      className="w-full rounded-full shadow-lg hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105"
-                      disabled={form.formState.isSubmitting}
-                    >
-                      <Send className="mr-2 h-5 w-5" />
-                      {form.formState.isSubmitting
-                        ? "Sending..."
-                        : "Send Message"}
-                    </Button>
-                  </form>
-                </Form>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
