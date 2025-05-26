@@ -36,6 +36,7 @@ import {
 } from "@/components/certification-card";
 import { ExperienceCard, type Experience } from "@/components/experience-card";
 import * as z from "zod";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // EducationEntry Interface (from education page)
 interface EducationEntry {
@@ -480,6 +481,7 @@ export default function SinglePagePortfolio() {
           </div>
         </div>
       </section>
+      <SpeedInsights />
     </div>
   );
 }
