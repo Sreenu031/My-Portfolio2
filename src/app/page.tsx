@@ -92,6 +92,22 @@ const projectsData: Project[] = [
     imageHint: "mobile health",
     repoUrl: "https://github.com/nameishyam/todo-app",
   },
+  {
+    title: "Job Application Tracker",
+    description:
+      "A web application for tracking job applications, built with React, Node.js, PostgreSQL, and Express.js. Allows users to add, update, and delete job applications.",
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Express.js",
+      "Tailwind CSS",
+    ],
+    imageUrl: "/images/job-tracker.png",
+    imageHint: "mobile health",
+    repoUrl: "https://github.com/nameishyam/job-tracker",
+    projectUrl: "https://application-tracker-xi.vercel.app",
+  },
 ];
 
 const skillsData = [
