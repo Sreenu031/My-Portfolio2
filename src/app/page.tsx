@@ -106,7 +106,7 @@ const projectsData: Project[] = [
     imageUrl: "/images/job-tracker.png",
     imageHint: "mobile health",
     repoUrl: "https://github.com/nameishyam/job-tracker",
-    projectUrl: "https://application-tracker-xi.vercel.app",
+    projectUrl: "https://career-dock.vercel.app",
   },
 ];
 
