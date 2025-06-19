@@ -21,20 +21,18 @@ export function Navbar() {
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); // Adjust threshold as needed
+      setIsScrolled(window.scrollY > 10);
 
-      let currentSection = activeLink; // Keep current active section as default
+      let currentSection = activeLink;
       let closestSection = null;
       let closestDistance = Infinity;
 
-      // Find the section that's closest to the top of the viewport
       for (const link of navLinks) {
         const section = document.getElementById(link.id);
         if (section) {
           const rect = section.getBoundingClientRect();
-          const distanceFromTop = Math.abs(rect.top - 80); // 80px offset for navbar
+          const distanceFromTop = Math.abs(rect.top - 80);
 
-          // If section is in viewport or close to it
           if (rect.top <= 100 && rect.bottom >= -100) {
             if (distanceFromTop < closestDistance) {
               closestDistance = distanceFromTop;
@@ -52,13 +50,12 @@ export function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!mounted) {
-    // To prevent hydration mismatch for activeLink derived from scroll
     return (
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-16" />
     );
@@ -83,7 +80,6 @@ export function Navbar() {
             Syam Gowtham Geddam
           </span>
         </Link>{" "}
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
           {navLinks.map((link) => (
             <Button
@@ -134,7 +130,6 @@ export function Navbar() {
             </Link>
           </Button>
         </div>
-        {/* Mobile Navigation */}
         <div className="md:hidden flex items-center">
           <ThemeToggleButton />
           <Sheet>

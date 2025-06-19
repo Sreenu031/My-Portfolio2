@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
   CardDescription as UiCardDescription,
-} from "@/components/ui/card"; // Renamed CardDescription to avoid conflict
+} from "@/components/ui/card";
 import {
   Download,
   Send,
@@ -37,7 +37,6 @@ import {
 import { ExperienceCard, type Experience } from "@/components/experience-card";
 import * as z from "zod";
 
-// EducationEntry Interface (from education page)
 interface EducationEntry {
   degree: string;
   institution: string;
@@ -47,7 +46,6 @@ interface EducationEntry {
   logoHint?: string;
 }
 
-// Contact Form Schema and Type (from contact page)
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -56,7 +54,6 @@ const contactFormSchema = z.object({
     .min(10, { message: "Message must be at least 10 characters." }),
 });
 
-// Data Arrays
 const projectsData: Project[] = [
   {
     title: "Chatbot Application using Gemini API",
@@ -198,6 +195,13 @@ const educationData: EducationEntry[] = [
 
 const certificationsData: Certification[] = [
   {
+    name: "Google Associate Cloud Engineer",
+    issuingOrganization: "Google Cloud",
+    dateAchieved: "June 2025",
+    credentialUrl:
+      "https://www.credly.com/badges/72a9be54-38aa-4048-ac2d-8b6ced710f60/public_url",
+  },
+  {
     name: "Github Foundations Certification",
     issuingOrganization: "GitHub",
     dateAchieved: "May 2025",
@@ -256,13 +260,11 @@ const experiencesData: Experience[] = [
 ];
 
 export default function SinglePagePortfolio() {
-  const scrollMarginClass = "scroll-mt-20 pt-10 md:pt-16"; // Adjusted scroll margin and added padding top
+  const scrollMarginClass = "scroll-mt-20 pt-10 md:pt-16";
 
   return (
     <div className="space-y-20 md:space-y-28 pb-20">
       {" "}
-      {/* Overall page spacing */}
-      {/* About Section */}
       <section id="about" className={scrollMarginClass}>
         <div className="space-y-12">
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -342,7 +344,6 @@ export default function SinglePagePortfolio() {
           </Card>
         </div>
       </section>
-      {/* Projects Section */}
       <section id="projects" className={scrollMarginClass}>
         <div className="space-y-10">
           <PageTitle
@@ -356,7 +357,6 @@ export default function SinglePagePortfolio() {
           </div>
         </div>
       </section>
-      {/* Skills Section */}
       <section id="skills" className={scrollMarginClass}>
         <div className="space-y-10">
           <PageTitle
@@ -376,7 +376,6 @@ export default function SinglePagePortfolio() {
           </div>
         </div>
       </section>
-      {/* Education Section */}
       <section id="education" className={scrollMarginClass}>
         <div className="space-y-10">
           <PageTitle
@@ -417,7 +416,6 @@ export default function SinglePagePortfolio() {
           </div>
         </div>
       </section>
-      {/* Certifications Section */}
       <section id="certifications" className={scrollMarginClass}>
         <div className="space-y-10">
           <PageTitle
@@ -431,7 +429,6 @@ export default function SinglePagePortfolio() {
           </div>
         </div>
       </section>
-      {/* Experience Section */}
       <section id="experience" className={scrollMarginClass}>
         <div className="space-y-10">
           <PageTitle
@@ -445,7 +442,6 @@ export default function SinglePagePortfolio() {
           </div>
         </div>
       </section>
-      {/* Contact Section */}
       <section id="contact" className={scrollMarginClass}>
         <div className="space-y-10">
           <PageTitle

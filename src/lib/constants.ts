@@ -8,19 +8,19 @@ import {
   GraduationCap,
   Award,
   Mail,
-  User, // For Experience
-  Code2, // For LeetCode
+  User,
+  Code2,
 } from "lucide-react";
 
 export interface NavLink {
   href: string;
   label: string;
   icon: LucideIcon;
-  id: string; // Added id for section targeting
+  id: string;
 }
 
 export const navLinks: NavLink[] = [
-  { href: "/#about", label: "About", icon: Home, id: "about" }, // Or UserCircle2
+  { href: "/#about", label: "About", icon: Home, id: "about" },
   { href: "/#projects", label: "Projects", icon: Briefcase, id: "projects" },
   { href: "/#skills", label: "Skills", icon: Lightbulb, id: "skills" },
   {
@@ -59,4 +59,4 @@ export const socialLinks: SocialLink[] = [
   },
 ];
 
-export const RESUME_PATH = "/files/Resume.pdf"; // Placeholder
+export const RESUME_PATH = "/files/Resume.pdf";
