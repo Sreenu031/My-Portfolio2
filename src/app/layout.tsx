@@ -6,10 +6,6 @@ import { Navbar } from "@/components/layout/navbar";
 import { Toaster } from "@/components/ui/toaster";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-export const metadata: Metadata = {
-other : {
-"google-site-verification":"pHWE_WHrHJbW-0uKUqmgTQibTW31hpqDLAFZcRuk8Pk",},};
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,6 +28,8 @@ export const metadata: Metadata = {
     description: "Explore the work and skills of Syam Gowtham Geddam.",
     type: "website",
   },
+other : {
+"google-site-verification":"pHWE_WHrHJbW-0uKUqmgTQibTW31hpqDLAFZcRuk8Pk",},
 };
 
 export default function RootLayout({
