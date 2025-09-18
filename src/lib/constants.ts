@@ -46,14 +46,14 @@ export interface SocialLink {
 }
 
 export const socialLinks: SocialLink[] = [
-  { href: "https://github.com/nameishyam", label: "GitHub", icon: Github },
+  { href: "https://github.com/Sreenu031", label: "GitHub", icon: Github },
   {
-    href: "https://www.linkedin.com/in/nameishyam/",
+    href: "https://www.linkedin.com/in/srinu-medisetti/",
     label: "LinkedIn",
     icon: Linkedin,
   },
   {
-    href: "https://leetcode.com/nameishyam/",
+    href: "https://leetcode.com/srinu_medisetti/",
     label: "LeetCode",
     icon: Code2,
   },

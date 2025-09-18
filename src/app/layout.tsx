@@ -17,15 +17,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Syam Gowtham Geddam | Portfolio",
+  title: "Srinu Medisetti | Portfolio",
   description:
-    "Portfolio of Syam Gowtham Geddam, showcasing skills in software engineering, design, machine learning, web development, and data science.",
+    "Portfolio of Srinu Medisetti, showcasing skills in software engineering, design, machine learning, web development.",
   keywords:
-    "Syam Gowtham Geddam, Portfolio, Software Engineer, Developer, Data Scientist, Machine Learning, Web Developer, Designer",
-  authors: [{ name: "Syam Gowtham Geddam" }],
+    "Srinu Medisetti, Portfolio, Software Engineer, Developer, Machine Learning, Web Developer, Designer",
+  authors: [{ name: "Srinu Medisetti" }],
   openGraph: {
-    title: "Syam Gowtham Geddam | Portfolio",
-    description: "Explore the work and skills of Syam Gowtham Geddam.",
+    title: "Srinu Medisetti | Portfolio",
+    description: "Explore the work and skills of Srinu Medisetti.",
     type: "website",
   },
 other : {

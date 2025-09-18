@@ -44,6 +44,7 @@ interface EducationEntry {
   description?: string;
   logoUrl?: string;
   logoHint?: string;
+  percentage?: string;
 }
 
 const contactFormSchema = z.object({
@@ -56,69 +57,71 @@ const contactFormSchema = z.object({
 
 const projectsData: Project[] = [
   {
-    title: "Chatbot Application using Gemini API",
+    title: "AI-Driven Platform for Early Mental Health Screening and Professional Support Platform",
     description:
-      "A sophisticated chatbot application leveraging the Gemini API to provide intelligent responses and engage users in natural language conversations. Features include context awareness, image recognition, and multi-turn dialogue management.",
-    technologies: ["React", "Node.js", "MongoDB", "Docker", "Gemini API"],
-    imageUrl: "/images/chatbot.png",
-    imageHint: "ecommerce platform",
-    repoUrl: "https://github.com/nameishyam/chat-bot",
+      "I developed a platform where orphanage organizations can register, add details of their children, and have them complete a mental health questionnaire. The system integrates a machine learning model to analyze the responses and assess the children’s mental health status. Based on the assessment, the platform recommends nearby psychologists, enabling timely support and intervention for those in need.",
+    technologies: ["Flask","ML","HTML", "CSS", "PostgreSQL ","Python"],
+    imageUrl: "/images/health.png",
+    imageHint: "AI APP",
+    repoUrl: "https://github.com/Sreenu031/Epics_project.git",
   },
   {
-    title: "Diabetic Retinopathy Detection System",
+    title: "DOGSAVY Web Platform",
     description:
-      "A deep learning based system for detecting diabetic retinopathy in retinal images. Utilizes advanced image processing techniques and neural networks for accurate diagnosis.",
-    technologies: ["GAN", "Pytorch", "OpenCV", "DRNet", "Flask", "Docker"],
-    imageUrl: "/images/drgrader.png",
+      "I developed a full-stack web application that allows users to report stray dogs with health issues by submitting images, geolocation, and notes. The platform features role-based dashboards where NGOs can rescue the dogs, and users can track the status and progress of their reported cases in real time.",
+    technologies: ["Node.js", "Express.js", "MongoDB", "HTML", "CSS", "JavaScript", "Rest API"],
+    imageUrl: "/images/DogSavy.png",
     imageHint: "data dashboard",
-    repoUrl: "https://github.com/nameishyam/mini-webapp",
+    repoUrl: "https://github.com/Sreenu031/DogSavy.git",
   },
   {
-    title: "To-Do List Application",
+    title: "Notes App – A Spring Boot Based Application",
     description:
-      "A simple yet effective to-do list application built with EJS and Node.js. Allows users to create, update, and delete tasks.",
+      "A full-stack Notes Application built with Spring Boot that allows users to securely create, update, and delete their personal notes. The project showcases authentication, user management, and complete CRUD functionality, highlighting practical implementation of core backend and frontend integration.                                           ",
     technologies: [
-      "EJS",
+      "Spring Boot",
       "PostgreSQL",
-      "Node.js",
-      "Express.js",
-      "Tailwind CSS",
+      "HTML",
+      "JavaScript",
+      "Spring Security",
+      "Spring Data JPA",
     ],
-    imageUrl: "/images/todo.png",
+    imageUrl: "/images/Notes.png",
     imageHint: "mobile health",
-    repoUrl: "https://github.com/nameishyam/todo-app",
+    repoUrl: "https://github.com/Sreenu031/NotesAppUsingSprinBoot.git",
   },
-  {
-    title: "Job Application Tracker",
-    description:
-      "A web application for tracking job applications, built with React, Node.js, PostgreSQL, and Express.js. Allows users to add, update, and delete job applications.",
-    technologies: [
-      "React",
-      "Node.js",
-      "PostgreSQL",
-      "Express.js",
-      "Tailwind CSS",
-    ],
-    imageUrl: "/images/job-tracker.png",
-    imageHint: "mobile health",
-    repoUrl: "https://github.com/nameishyam/job-tracker",
-    projectUrl: "https://career-dock.vercel.app",
-  },
+  // {
+  //   title: "Job Application Tracker",
+  //   description:
+  //     "A web application for tracking job applications, built with React, Node.js, PostgreSQL, and Express.js. Allows users to add, update, and delete job applications.",
+  //   technologies: [
+  //     "React",
+  //     "Node.js",
+  //     "PostgreSQL",
+  //     "Express.js",
+  //     "Tailwind CSS",
+  //   ],
+  //   imageUrl: "/images/job-tracker.png",
+  //   imageHint: "mobile health",
+  //   repoUrl: "https://github.com/nameishyam/job-tracker",
+  //   projectUrl: "https://career-dock.vercel.app",
+  // },
 ];
 
 const skillsData = [
   {
-    name: "JavaScript",
-    icon: Code,
-    level: "Expert" as const,
-    description: "Modern JS (ES6+), Async/Await, DOM Manipulation",
-  },
-  {
-    name: "TypeScript",
+    name: "Java",
     icon: Code,
     level: "Intermediate" as const,
-    description: "Strong Typing, Interfaces, Generics",
+    description: "OOP, Data Structures, Algorithms, Spring Boot",
   },
+  {
+    name: "Javascript",
+    icon: Code,
+    level: "Intermediate" as const,
+    description: "Modern JS (ES6+), Async/Await, DOM Manipulation",
+  },
+  
   {
     name: "React",
     icon: LayoutPanelLeft,
@@ -135,26 +138,21 @@ const skillsData = [
     name: "Python",
     icon: Code,
     level: "Advanced" as const,
-    description: "Data Science, ML, Web Scraping, Automation",
+    description: " ML, Flask",
   },
   {
     name: "Machine Learning",
     icon: Brain,
     level: "Intermediate" as const,
-    description: "Scikit-learn, TensorFlow, PyTorch Basics",
+    description: "Scikit-learn, TensorFlow",
   },
   {
-    name: "Deep Learning and NLP",
+    name: "Deep Learning",
     icon: BrainCircuitIcon,
-    level: "Intermediate" as const,
-    description: "Transformers, BERT, GPT, Text Generation",
+    level: "Basic" as const,
+    description: "Neural Networks, CNNs, RNNs",
   },
-  {
-    name: "Data Science",
-    icon: BarChart3,
-    level: "Intermediate" as const,
-    description: "Pandas, NumPy, Matplotlib, Seaborn",
-  },
+ 
   {
     name: "SQL & NoSQL",
     icon: Database,
@@ -184,78 +182,97 @@ const skillsData = [
 const educationData: EducationEntry[] = [
   {
     degree: "Bachelor of Technology in Computer Science",
-    institution: "University of SAHE",
-    duration: "2022 - Present",
+    institution: "Velagapudi Ramakrishna Siddhartha Engineering College (VRSEC)",
+    duration: "2023 - Present",
+    percentage: "8.59 CGPA (up to 6th Sem)",
     description:
-      "Specializing in Artificial Intelligence and Machine Learning. Actively involved in research projects focusing on medical research and computer vision. Participated in various hackathons and coding competitions, gaining valuable experience. Led the university's Google Developer Student Club (GDSC) chapter's web development initiatives, organizing workshops and events to foster a community of tech enthusiasts.",
-    logoUrl: "/images/sahe.png",
+      "Specializing in Artificial Intelligence and Data Science. Actively involved in research projects focusing on medical research . Participated in various hackathons and coding competitions, gaining valuable experience. Led the university's Microsoft Learn Student Ambassadors (MLSA) chapter's web development initiatives, organizing workshops and events to foster a community of tech enthusiasts.",
+    logoUrl: "/images/vrsec.png",
+    logoHint: "university logo",
+  },
+  {
+    degree: "Diploma in Computer Engineering",
+    institution: "Government Polytechnic, Srikakulam",
+    duration: "2020 - 2022",
+    percentage: "89.7%",
+    description:
+      "During my diploma in Computer Engineering, I built a strong foundation in both theoretical concepts and practical skills. The program emphasized hands-on learning, which helped me gain more practical exposure than just classroom knowledge. I actively participated in state-level tech fests, completed six months of industry training, and worked on my final project, all of which deepened my understanding of computer systems and software development. At the end of my diploma, I appeared for the ECET exam and secured a rank of 162.",
+    logoUrl: "/images/vrsec.png",
     logoHint: "university logo",
   },
 ];
 
 const certificationsData: Certification[] = [
+  
   {
-    name: "Google Associate Cloud Engineer",
-    issuingOrganization: "Google Cloud",
-    dateAchieved: "June 2025",
+    name: "Java Spring framework 6  with Spring Boot 3",
+    issuingOrganization: "Udemy",
+    dateAchieved: "March 2025",
     credentialUrl:
-      "https://www.credly.com/badges/72a9be54-38aa-4048-ac2d-8b6ced710f60/public_url",
+      "https://www.udemy.com/certificate/UC-808f7a09-1a30-4bb5-81ab-63d2feed7cb2/",
   },
   {
-    name: "Github Foundations Certification",
-    issuingOrganization: "GitHub",
-    dateAchieved: "May 2025",
+    name: "Getting Started with Javascript",
+    issuingOrganization: "Pupilfirst",
+    dateAchieved: "Sep 2024",
     credentialUrl:
-      "https://www.credly.com/badges/6a4b6bd7-8f98-4337-904c-b4e38306fc77/public_url",
+      "https://www.pupilfirst.school/c/240903-MV5Y0P",
   },
   {
-    name: "Google Cloud Engieneer - Cloud Computing Foundations",
-    issuingOrganization: "Google Cloud",
-    dateAchieved: "May 2025",
+    name: "Postman API Fundamentals Student Expert",
+    issuingOrganization: "Postman",
+    dateAchieved: "Aug 2025",
     credentialUrl:
-      "https://www.credly.com/badges/731241e3-2e69-4ec5-b7fd-d785789d91fa/linked_in_profile",
+      "https://badgr.com/public/assertions/MF24dYGJTI2RT9hS2MFYFg",
   },
   {
-    name: "CCNA - Introduction to Networks",
-    issuingOrganization: "Cisco Networking Academy",
-    dateAchieved: "May 2024",
+    name: "Git and GitHub Basics",
+    issuingOrganization: "edx",
+    dateAchieved: "July 2024",
     credentialUrl:
-      "https://www.credly.com/badges/a3f144c0-a8ca-4c2b-a8f7-82735959541f/linked_in_profile",
+      "https://courses.edx.org/certificates/b50e6e44a6f548e384f92e280f5c3795",
   },
   {
-    name: "AWS Academy Graduate - Cloud Foundations",
-    issuingOrganization: "Amazon Web Services (AWS)",
-    dateAchieved: "February 2024",
+    name: "Data Base Foundations",
+    issuingOrganization: "Oracle",
+    dateAchieved: "Nov 2023",
     credentialUrl:
-      "https://www.credly.com/badges/0c33512a-7b23-4404-86b2-133572ff72ca/linked_in_profile",
+      "https://www.linkedin.com/in/srinu-medisetti/details/certifications/1729444470931/single-media-viewer/?profileId=ACoAAEY24tkB_nNAVlZv6pFUhI9fQwrksA2QTIs",
+  },
+  {
+    name: "AWS Workshop",
+    issuingOrganization: "APSSDC",
+    dateAchieved: "Aug 2024",
+    credentialUrl:
+      "https://www.linkedin.com/in/srinu-medisetti/details/certifications/1635554718422/single-media-viewer/?profileId=ACoAAEY24tkB_nNAVlZv6pFUhI9fQwrksA2QTIs",
   },
 ];
 
 const experiencesData: Experience[] = [
   {
-    title: "Google Developer Student Club Lead",
-    company: "Googe Developer Student Club (GDSC)",
+    title: "MLSA Student Club Lead",
+    company: "Microsoft Learn Student Ambassadors (MLSA)",
     location: "University of SAHE, Vijayawada, India",
-    duration: "Aug 2024 - Present",
+    duration: "Dec 2024 - Aug 2025",
     descriptionPoints: [
-      "Leading the GDSC chapter at University of SAHE, focusing on web development technologies.",
+      "Leading the MLSA chapter at University of SAHE, focusing on web development technologies.",
       "Organizing workshops, hackathons, and coding competitions to foster a community of tech enthusiasts.",
-      "Collaborating with industry professionals to provide students with real-world insights and networking opportunities.",
+      "As part of web development, I conducted a session on Git and GitHub basics, where I served as the instructor and explained the concepts to over 100 students.",
       "Mentoring junior students in web development best practices and project management.",
     ],
-    logoUrl: "/images/gdg.jpg",
+    logoUrl: "/images/mlsa.jpeg",
   },
   {
     title: "Web Development Intern",
-    company: "MotionCut co.",
+    company: "AIMERS",
     location: "Remote",
-    duration: "Nov 2023 - Dec 2023",
+    duration: "Dec 2024 - March 2025",
     descriptionPoints: [
-      "Developed and maintained responsive web applications using simple HTML, CSS, and JavaScript.",
+      "As part of my internship, I worked on a data structures visualization project, where I contributed to building stack and tree visualizations using React.js.",
       "Collaborated with the design team to implement user-friendly interfaces and improve user experience.",
-      "Gained hands-on experience in version control using Git and collaborative development practices.",
+      "Gained hands-on experience in version control using Git, React, and collaborative development practices.",
     ],
-    logoUrl: "/images/motioncut.png",
+    logoUrl: "/images/aimers.jpeg",
   },
 ];
 
@@ -271,7 +288,7 @@ export default function SinglePagePortfolio() {
             <div className="w-48 h-48 md:w-60 md:h-60 relative rounded-full overflow-hidden shadow-xl border-4 border-primary/50">
               <Image
                 src="/images/profile.jpg"
-                alt="Syam Gowtham Geddam"
+                alt="Srinu Medisetti"
                 fill
                 priority
                 data-ai-hint="profile picture"
@@ -280,11 +297,10 @@ export default function SinglePagePortfolio() {
             </div>
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-3">
-                Syam Gowtham <span className="text-primary">Geddam</span>
+                Srinu  <span className="text-primary">Medisetti</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-                Software Engineer | ML Enthusiast | Web Developer | Data
-                Scientist
+                Software Engineer | ML Enthusiast | Web Developer
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed mb-8 max-w-2xl mx-auto md:mx-0">
                 Welcome to my portfolio! I am a passionate and versatile student
@@ -325,14 +341,12 @@ export default function SinglePagePortfolio() {
             </CardHeader>
             <CardContent className="text-foreground/80 leading-relaxed space-y-4 text-center md:text-left px-8 pb-8">
               <p>
-                As a dedicated student, I am continuously exploring the
-                frontiers of technology. My expertise spans full-stack web
-                development, where I enjoy creating seamless user experiences,
-                to the intricate world of machine learning and data science,
-                where I leverage data to derive insights and build intelligent
-                systems. I am also proficient in UI/UX design, believing that
-                great functionality must be accompanied by intuitive and
-                aesthetically pleasing interfaces.
+               As a dedicated student, I am continuously exploring
+                the frontiers of technology. My expertise spans full-stack web development, 
+                where I enjoy creating seamless user experiences, to the intricate world of machine learning,
+                 where I leverage data to derive insights and build intelligent systems.
+                 I am also skilled in Java development, particularly with Spring Boot, which enables me 
+                 to build robust and scalable applications.
               </p>
               <p>
                 I thrive in collaborative environments and am always eager to
@@ -396,6 +410,9 @@ export default function SinglePagePortfolio() {
                       </CardTitle>
                       <p className="text-lg text-foreground/90">
                         {edu.institution}
+                      </p>
+                      <p className="text-lg text-foreground/90">
+                        {edu.percentage}
                       </p>
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground mt-2 sm:mt-0 whitespace-nowrap">
@@ -468,7 +485,7 @@ export default function SinglePagePortfolio() {
                         href="mailto:geddamgowtham4@gmail.com"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        geddamgowtham4@gmail.com
+                        medisettisrinu2004@gmail.com
                       </a>
                     </div>
                   </div>
@@ -476,7 +493,7 @@ export default function SinglePagePortfolio() {
                     <Phone className="h-6 w-6 text-primary" />
                     <div>
                       <p className="font-semibold">Phone</p>
-                      <p className="text-muted-foreground">(+91) 63051 79812</p>
+                      <p className="text-muted-foreground">(+91) 7032949259</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">

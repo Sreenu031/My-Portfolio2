@@ -77,7 +77,7 @@ export function Navbar() {
           onClick={() => setActiveLink("/#about")}
         >
           <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            Syam Gowtham Geddam
+            Srinu Medisetti
           </span>
         </Link>{" "}
         <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">

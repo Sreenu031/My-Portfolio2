@@ -46,7 +46,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <CardTitle className="text-2xl font-semibold text-primary">
           {project.title}
         </CardTitle>
-        <CardDescription className="text-foreground/80 min-h-[60px] line-clamp-3">
+        <CardDescription className="text-foreground/80 min-h-[60px] line-clamp-7">
           {project.description}
         </CardDescription>
         <div className="pt-2">
