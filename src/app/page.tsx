@@ -64,6 +64,7 @@ const projectsData: Project[] = [
     imageUrl: "/images/health.png",
     imageHint: "AI APP",
     repoUrl: "https://github.com/Sreenu031/Epics_project.git",
+    projectUrl:"https://epics-project.onrender.com/"
   },
   {
     title: "DOGSAVY Web Platform",
@@ -73,6 +74,7 @@ const projectsData: Project[] = [
     imageUrl: "/images/DogSavy.png",
     imageHint: "data dashboard",
     repoUrl: "https://github.com/Sreenu031/DogSavy.git",
+    projectUrl:"https://dogsavy.vercel.app/"
   },
   {
     title: "Notes App – A Spring Boot Based Application",
@@ -89,6 +91,7 @@ const projectsData: Project[] = [
     imageUrl: "/images/Notes.png",
     imageHint: "mobile health",
     repoUrl: "https://github.com/Sreenu031/NotesAppUsingSprinBoot.git",
+    projectUrl:"https://notes-f6gj.onrender.com/"
   },
   // {
   //   title: "Job Application Tracker",
